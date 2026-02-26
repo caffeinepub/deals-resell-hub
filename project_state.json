@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "A deals and reselling website where the owner posts deals, loots, offers, flash/quick sales, and reselling products. When a customer places an order, it gets fulfilled through the owner's account using the customer's provided details.",
+  "architectural_notes": [
+    "Single-owner model: only the site owner posts products/deals; customers browse and place orders",
+    "Order flow: customer submits details → owner uses those details to place order via their own account on source platform"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-public-facing-homepage-that-displays-all-active-listings-in-a-card-grid-include-a-category-filter-bar-all-deals-loots-offers-flash-sales-quick-sales-resell-flash-quick-sale-cards-must-show-a-live-countdown-timer-until-expiry-each-card-shows-the-product-image-title-original-price-with-strikethrough-deal-price-discount-percentage-badge-and-a-grab-deal-or-order-now-button",
+      "title": "Build a public-facing homepage that displays all active listings in a card grid. Include a category filter bar (All, Deals, Loots, Offers, Flash Sales, Quick Sales, Resell). Flash/quick sale cards must show a live countdown timer until expiry. Each card shows the product image, title, original price with strikethrough, deal price, discount percentage badge, and a 'Grab Deal' or 'Order Now' button.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-listing-detail-page-accessible-from-each-card-display-full-product-details-including-all-images-description-price-category-and-stock-include-an-order-form-where-customers-enter-their-name-phone-number-delivery-address-and-quantity-then-submit-to-place-an-order-show-a-confirmation-message-after-successful-order-placement",
+      "title": "Build a listing detail page accessible from each card. Display full product details including all images, description, price, category, and stock. Include an order form where customers enter their name, phone number, delivery address, and quantity, then submit to place an order. Show a confirmation message after successful order placement.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-password-protected-owner-admin-panel-no-internet-identity-required-use-a-simple-hardcoded-admin-pin-stored-in-the-backend-the-admin-panel-must-include-1-a-listing-management-section-to-add-edit-delete-and-toggle-active-status-of-all-deals-products-2-an-orders-dashboard-showing-all-incoming-orders-with-customer-details-listing-title-and-status-3-ability-to-update-order-status-the-admin-panel-must-be-accessible-via-a-hidden-route-like-admin",
+      "title": "Build a password-protected owner admin panel (no Internet Identity required — use a simple hardcoded admin PIN stored in the backend). The admin panel must include: (1) a listing management section to add, edit, delete, and toggle active status of all deals/products; (2) an orders dashboard showing all incoming orders with customer details, listing title, and status; (3) ability to update order status. The admin panel must be accessible via a hidden route like /admin.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-energetic-visual-theme-across-the-entire-frontend-use-a-dark-background-with-vibrant-accent-colors-e-g-hot-orange-or-neon-yellow-green-to-convey-urgency-and-excitement-appropriate-for-a-flash-deals-platform-use-strong-typography-with-large-price-callouts-high-contrast-badges-for-discounts-and-card-hover-animations-the-layout-should-feel-like-a-premium-deal-hunting-app",
+      "title": "Apply a bold, energetic visual theme across the entire frontend. Use a dark background with vibrant accent colors (e.g., hot orange or neon yellow-green) to convey urgency and excitement appropriate for a flash-deals platform. Use strong typography with large price callouts, high-contrast badges for discounts, and card hover animations. The layout should feel like a premium deal-hunting app.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-display-a-site-logo-and-a-hero-banner-image-for-the-homepage-render-them-as-static-assets-from-frontend-public-assets-generated",
+      "title": "Generate and display a site logo and a hero banner image for the homepage. Render them as static assets from frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-revamp-the-entire-frontend-visual-aesthetic-to-feel-refined-stylish-and-aesthetic-while-retaining-the-energetic-deal-hunting-vibe-replace-the-current-bold-loud-color-palette-with-a-more-curated-premium-look-consider-deep-jewel-tones-soft-gradients-elegant-typography-refined-card-layouts-with-subtle-shadows-and-borders-and-polished-micro-interactions-update-css-custom-properties-in-frontend-src-index-css-and-tailwind-tokens-in-frontend-tailwind-config-js-accordingly-apply-changes-consistently-across-all-pages-and-components-homepage-listingdetailpage-productcard-categoryfilter-layout-orderform-adminloginpage-admindashboardpage-listingsmanagementpage-ordersdashboardpage-addlistingform-editlistingform-and-countdowntimer",
+      "title": "Revamp the entire frontend visual aesthetic to feel refined, stylish, and aesthetic while retaining the energetic deal-hunting vibe. Replace the current bold/loud color palette with a more curated, premium look — consider deep jewel tones, soft gradients, elegant typography, refined card layouts with subtle shadows and borders, and polished micro-interactions. Update CSS custom properties in frontend/src/index.css and Tailwind tokens in frontend/tailwind.config.js accordingly. Apply changes consistently across all pages and components: HomePage, ListingDetailPage, ProductCard, CategoryFilter, Layout, OrderForm, AdminLoginPage, AdminDashboardPage, ListingsManagementPage, OrdersDashboardPage, AddListingForm, EditListingForm, and CountdownTimer.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Post and manage deals, loots, offers, and flash/quick sales",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Reselling product listings posted by the site owner",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Customer order placement with customer-provided shipping/contact details",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Owner fulfills orders through their own account using customer details",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend data model and actor functions to manage product/deal listings. Each listing must include: title, description, original price, deal/sale price, category (Deal, Loot, Offer, Flash Sale, Quick Sale, Resell), image URL, stock quantity, expiry timestamp (for flash/quick sales), and active/inactive status. Provide functions to create, update, delete, and fetch listings.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create a backend order management system. When a customer places an order, store: listing ID, customer name, customer phone number, customer shipping address, quantity ordered, order timestamp, and order status (Pending, Processing, Fulfilled, Cancelled). Provide functions to place an order and for the owner to view and update all orders.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Revamp the visual aesthetic of the site — more refined, stylish, and aesthetic feel while keeping the energetic deal-hunting vibe",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Deals & Resell Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

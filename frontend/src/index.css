@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: oklch(0.12 0.015 265);
+    --foreground: oklch(0.93 0.01 265);
+
+    --card: oklch(0.16 0.018 265);
+    --card-foreground: oklch(0.93 0.01 265);
+
+    --popover: oklch(0.15 0.018 265);
+    --popover-foreground: oklch(0.93 0.01 265);
+
+    --primary: oklch(0.68 0.14 195);
+    --primary-foreground: oklch(0.12 0.015 265);
+
+    --secondary: oklch(0.22 0.025 265);
+    --secondary-foreground: oklch(0.85 0.01 265);
+
+    --muted: oklch(0.20 0.02 265);
+    --muted-foreground: oklch(0.58 0.02 265);
+
+    --accent: oklch(0.62 0.16 285);
+    --accent-foreground: oklch(0.97 0.005 265);
+
+    --destructive: oklch(0.55 0.18 25);
+    --destructive-foreground: oklch(0.97 0.005 265);
+
+    --border: oklch(0.25 0.02 265);
+    --input: oklch(0.22 0.02 265);
+    --ring: oklch(0.68 0.14 195);
+
+    --radius: 0.75rem;
+
+    /* Deal-specific tokens */
+    --deal-emerald: oklch(0.65 0.18 160);
+    --deal-sapphire: oklch(0.60 0.18 250);
+    --deal-amethyst: oklch(0.62 0.16 285);
+    --deal-ruby: oklch(0.58 0.20 25);
+    --deal-gold: oklch(0.78 0.14 80);
+    --deal-teal: oklch(0.68 0.14 195);
+
+    --deal-surface: oklch(0.18 0.022 265);
+    --deal-surface-hover: oklch(0.21 0.025 265);
+    --deal-border: oklch(0.28 0.025 265);
+    --deal-glow: oklch(0.68 0.14 195 / 0.15);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Card styles */
+  .deal-card {
+    @apply bg-card border border-deal-border rounded-xl overflow-hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-color 0.3s ease;
+  }
+
+  .deal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px oklch(0 0 0 / 0.4), 0 0 0 1px oklch(0.68 0.14 195 / 0.2);
+    border-color: oklch(0.68 0.14 195 / 0.35);
+  }
+
+  /* Badge styles */
+  .deal-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Discount badge */
+  .discount-badge {
+    background: linear-gradient(135deg, oklch(0.58 0.20 25), oklch(0.52 0.18 15));
+    color: oklch(0.97 0.005 265);
+    @apply deal-badge px-2.5 py-1 rounded-lg;
+    box-shadow: 0 2px 12px oklch(0.58 0.20 25 / 0.35);
+  }
+
+  /* Category badge */
+  .category-badge-deal { background: oklch(0.65 0.18 160 / 0.15); color: oklch(0.65 0.18 160); border: 1px solid oklch(0.65 0.18 160 / 0.3); }
+  .category-badge-loot { background: oklch(0.78 0.14 80 / 0.15); color: oklch(0.78 0.14 80); border: 1px solid oklch(0.78 0.14 80 / 0.3); }
+  .category-badge-offer { background: oklch(0.60 0.18 250 / 0.15); color: oklch(0.60 0.18 250); border: 1px solid oklch(0.60 0.18 250 / 0.3); }
+  .category-badge-flashSale { background: oklch(0.58 0.20 25 / 0.15); color: oklch(0.58 0.20 25); border: 1px solid oklch(0.58 0.20 25 / 0.3); }
+  .category-badge-quickSale { background: oklch(0.62 0.16 285 / 0.15); color: oklch(0.62 0.16 285); border: 1px solid oklch(0.62 0.16 285 / 0.3); }
+  .category-badge-resell { background: oklch(0.68 0.14 195 / 0.15); color: oklch(0.68 0.14 195); border: 1px solid oklch(0.68 0.14 195 / 0.3); }
+
+  /* Button styles */
+  .btn-primary {
+    background: linear-gradient(135deg, oklch(0.68 0.14 195), oklch(0.62 0.16 210));
+    color: oklch(0.12 0.015 265);
+    @apply font-semibold rounded-lg px-5 py-2.5 text-sm;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 16px oklch(0.68 0.14 195 / 0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px oklch(0.68 0.14 195 / 0.35);
+    background: linear-gradient(135deg, oklch(0.72 0.14 195), oklch(0.66 0.16 210));
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.45;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  /* Input styles */
+  .input-refined {
+    @apply bg-input border border-border rounded-lg px-4 py-2.5 text-sm text-foreground w-full;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+
+  .input-refined:focus {
+    border-color: oklch(0.68 0.14 195 / 0.6);
+    box-shadow: 0 0 0 3px oklch(0.68 0.14 195 / 0.12);
+  }
+
+  .input-refined::placeholder {
+    color: oklch(0.45 0.015 265);
+  }
+
+  /* Countdown timer */
+  .countdown-unit {
+    background: oklch(0.20 0.025 265);
+    border: 1px solid oklch(0.28 0.025 265);
+    @apply rounded-lg px-2.5 py-1.5 text-center;
+    min-width: 2.8rem;
+  }
+
+  .countdown-number {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: oklch(0.68 0.14 195);
+    line-height: 1;
+    display: block;
+  }
+
+  .countdown-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: oklch(0.50 0.02 265);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.68 0.14 195), oklch(0.62 0.16 285));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle divider */
+  .divider-refined {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, oklch(0.28 0.025 265), transparent);
+  }
+
+  /* Hero overlay */
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      oklch(0.12 0.015 265 / 0.92) 0%,
+      oklch(0.12 0.015 265 / 0.7) 50%,
+      oklch(0.12 0.015 265 / 0.3) 100%
+    );
+  }
+
+  /* Stats card */
+  .stats-card {
+    background: oklch(0.16 0.018 265);
+    border: 1px solid oklch(0.25 0.022 265);
+    @apply rounded-xl p-5;
+    transition: border-color 0.2s ease;
+  }
+
+  .stats-card:hover {
+    border-color: oklch(0.68 0.14 195 / 0.3);
+  }
+
+  /* Admin card */
+  .admin-nav-card {
+    background: oklch(0.16 0.018 265);
+    border: 1px solid oklch(0.25 0.022 265);
+    @apply rounded-2xl p-8 cursor-pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .admin-nav-card:hover {
+    transform: translateY(-3px);
+    border-color: oklch(0.68 0.14 195 / 0.4);
+    box-shadow: 0 16px 48px oklch(0 0 0 / 0.3), 0 0 0 1px oklch(0.68 0.14 195 / 0.15);
+  }
+
+  /* Table row hover */
+  .table-row-refined {
+    transition: background-color 0.15s ease;
+  }
+
+  .table-row-refined:hover {
+    background: oklch(0.18 0.02 265);
+  }
+
+  /* Status badge */
+  .status-pending { background: oklch(0.78 0.14 80 / 0.15); color: oklch(0.78 0.14 80); border: 1px solid oklch(0.78 0.14 80 / 0.3); }
+  .status-processing { background: oklch(0.60 0.18 250 / 0.15); color: oklch(0.60 0.18 250); border: 1px solid oklch(0.60 0.18 250 / 0.3); }
+  .status-fulfilled { background: oklch(0.65 0.18 160 / 0.15); color: oklch(0.65 0.18 160); border: 1px solid oklch(0.65 0.18 160 / 0.3); }
+  .status-cancelled { background: oklch(0.55 0.18 25 / 0.15); color: oklch(0.55 0.18 25); border: 1px solid oklch(0.55 0.18 25 / 0.3); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(0.14 0.015 265);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.28 0.025 265);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.35 0.03 265);
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Revamp visual aesthetic to a refined, stylish look",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Revamp the entire frontend visual aesthetic to feel refined, stylish, and aesthetic while retaining the energetic deal-hunting vibe. Replace bold/loud colors with curated premium look using deep jewel tones, soft gradients, elegant typography, refined card layouts with subtle shadows and borders, and polished micro-interactions.",
+      "acceptanceCriteria": [
+        "The site uses a cohesive, aesthetic color palette (e.g., deep jewel tones or muted luxe colors) replacing the previous loud neon/orange scheme.",
+        "Typography feels refined — clean font choices, well-spaced headings and body text, elegant price callouts.",
+        "Product cards have polished styling: subtle gradients or borders, smooth hover animations, and refined badge design.",
+        "The category filter bar, header, footer, and hero section all reflect the updated aesthetic consistently.",
+        "Admin panel pages (login, dashboard, listings, orders) share the same refined visual language.",
+        "Countdown timers and discount badges remain highly visible but are styled to match the new aesthetic.",
+        "All interactive elements (buttons, inputs, dropdowns) have consistent, polished styling with smooth transitions.",
+        "Dark background is retained but feels premium rather than harsh."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Replace the current bold OKLCH color palette with refined aesthetic tokens using deep jewel tones (e.g., sapphire blues, emerald greens, amethyst purples) and muted luxe accents. Update CSS custom properties for primary, secondary, accent, background, foreground, card, border, and deal-specific colors. Refine utility classes for hover effects, glows, and animations to feel polished rather than loud. Ensure dark background colors feel premium (softer blacks, rich charcoals). Add or update gradient utilities for subtle elegant gradients. Maintain the energetic deal-hunting vibe through refined animations and transitions rather than harsh neon colors."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind theme tokens to align with the refined aesthetic. Replace current semantic color mappings with new OKLCH-based jewel tone palette. Refine font family choices to elegant, clean typefaces (consider serif for headings or refined sans-serif options). Update border radius tokens for more polished card edges (slightly softer corners). Enhance box shadow utilities with subtle, layered shadows for depth. Update animation keyframes to be smooth and refined (slower, more graceful transitions). Ensure all theme extensions support the premium aesthetic while retaining deal-oriented urgency through refined motion design."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Revamp ProductCard styling to feature polished card design with subtle gradients or refined borders, elegant shadows for depth, and smooth hover animations. Update discount badge styling to be highly visible yet refined (jewel tone backgrounds, elegant typography, subtle glow). Refine category badge to match new aesthetic with muted colors and clean labels. Ensure countdown timer integration feels premium. Update out-of-stock and expired overlays to use refined color palette with subtle transparency. Apply consistent spacing, typography hierarchy, and micro-interactions (smooth scale/shadow transitions on hover). Ensure all interactive states (hover, active, focus) feel polished."
+        },
+        {
+          "path": "frontend/src/components/CategoryFilter.tsx",
+          "operation": "modify",
+          "description": "Update CategoryFilter bar styling to reflect refined aesthetic. Replace bold category button colors with elegant jewel tones or muted luxe colors. Refine typography for category labels to be clean and well-spaced. Update active state styling with subtle gradients, refined borders, or elegant underlines rather than loud highlights. Ensure icons pair well with refined color palette. Add smooth transitions for hover and active states. Maintain horizontal scroll functionality while applying polished styling to the container and buttons."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Revamp Layout component (header, footer) to match refined aesthetic. Update header styling with elegant background color/gradient from new palette, refined logo placement, and polished navigation links with smooth hover effects. Ensure sticky header feels premium with subtle shadow. Update footer styling to use refined colors and elegant typography for the caffeine.ai attribution. Apply consistent spacing and refined border treatments. Ensure header and footer share the cohesive visual language with rest of the app."
+        },
+        {
+          "path": "frontend/src/components/CountdownTimer.tsx",
+          "operation": "modify",
+          "description": "Refine CountdownTimer styling to remain highly visible while matching the new aesthetic. Update time unit styling with elegant typography, refined colors from jewel tone palette, and subtle backgrounds or borders. Ensure both compact and full display modes feel polished. Add smooth transitions for number changes if possible. Use refined accent colors for urgency (e.g., deep ruby red for low time) that feel premium rather than harsh. Maintain readability and urgency while aligning with overall refined visual language."
+        },
+        {
+          "path": "frontend/src/components/OrderForm.tsx",
+          "operation": "modify",
+          "description": "Update OrderForm styling with refined input fields featuring elegant borders, subtle focus states with jewel tone accents, and polished typography. Refine button styling (submit, back) to use new palette with smooth hover/active transitions, subtle shadows, and refined disabled states. Update form labels and validation messages to use elegant, well-spaced typography. Ensure success confirmation summary matches refined aesthetic with polished card styling. Apply consistent spacing and refined error state colors."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Revamp HomePage hero section and layout to reflect refined aesthetic. Update hero image section (using frontend/public/assets/generated/hero-banner.dim_1400x400.png) with elegant overlays, refined typography for headings, and polished call-to-action styling. Refine flash sale banner with jewel tone backgrounds and elegant urgency messaging. Update stats row styling with refined card design, subtle borders/shadows, and elegant typography for numbers and labels. Ensure consistent application of new color palette across all sections. Apply polished spacing and refined visual hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/ListingDetailPage.tsx",
+          "operation": "modify",
+          "description": "Update ListingDetailPage to use refined aesthetic throughout. Apply polished styling to listing image container with subtle shadows or refined borders. Update category badge, discount display, and countdown timer to match new refined styles. Refine product title, description, price callouts, and stock status with elegant typography and refined colors. Ensure OrderForm integration displays with consistent refined styling. Apply cohesive spacing, refined card layouts, and premium color palette across all detail sections."
+        },
+        {
+          "path": "frontend/src/pages/AdminLoginPage.tsx",
+          "operation": "modify",
+          "description": "Revamp AdminLoginPage with refined aesthetic. Update login card with polished styling using subtle gradients or elegant borders, refined shadows for depth, and premium background colors. Refine form input styling with elegant borders and focus states. Update submit button with refined colors, smooth transitions, and polished hover effects. Apply elegant typography for headings and labels. Ensure error messages use refined alert colors. Maintain dark premium feel throughout admin login experience."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboardPage.tsx",
+          "operation": "modify",
+          "description": "Update AdminDashboardPage navigation cards and layout with refined aesthetic. Apply polished card styling to Listings and Orders navigation options with subtle shadows, refined borders, elegant hover effects (smooth scale/shadow transitions), and jewel tone accents. Refine page heading typography and spacing. Update logout button with refined styling and smooth interactions. Ensure the admin dashboard feels cohesive with the public-facing refined aesthetic while maintaining functional clarity."
+        },
+        {
+          "path": "frontend/src/pages/ListingsManagementPage.tsx",
+          "operation": "modify",
+          "description": "Revamp ListingsManagementPage with refined aesthetic for table/list view, dialogs, and action buttons. Update listing table styling with elegant borders, refined row hover states, polished typography for data cells, and refined status indicators (active/inactive badges). Apply elegant dialog styling for add/edit forms with refined shadows, premium backgrounds, and polished form elements. Update action buttons (add, edit, toggle, delete) with refined colors, smooth transitions, and consistent styling. Ensure all admin controls feel premium and cohesive with overall aesthetic."
+        },
+        {
+          "path": "frontend/src/pages/OrdersDashboardPage.tsx",
+          "operation": "modify",
+          "description": "Update OrdersDashboardPage with refined aesthetic for orders table, status summary, and status dropdowns. Apply polished table styling with elegant borders, refined row hover effects, and clean typography. Update status summary counts with refined card design, jewel tone backgrounds, and elegant number displays. Refine status dropdown styling with premium colors, smooth transitions, and polished option states. Apply consistent refined color coding for order statuses (pending, processing, fulfilled, cancelled) using jewel tones. Ensure all admin order management elements feel cohesive and premium."
+        },
+        {
+          "path": "frontend/src/components/AddListingForm.tsx",
+          "operation": "modify",
+          "description": "Revamp AddListingForm with refined aesthetic for all form inputs, buttons, and validation messages. Update input field styling with elegant borders, refined focus states using jewel tone accents, and polished typography. Refine submit and cancel buttons with premium colors, smooth hover/active transitions, and subtle shadows. Update category selector and conditional expiry fields with refined styling. Apply elegant error message styling with refined alert colors. Ensure form feels cohesive with overall admin panel aesthetic and maintains functional clarity."
+        },
+        {
+          "path": "frontend/src/components/EditListingForm.tsx",
+          "operation": "modify",
+          "description": "Update EditListingForm with refined aesthetic matching AddListingForm. Apply polished styling to all form fields (title, description, prices, category, image URL, stock, expiry) with elegant borders, refined focus states, and premium typography. Refine action buttons (save, delete, cancel) with jewel tone colors, smooth transitions, and consistent hover effects. Update validation and confirmation dialogs with refined aesthetic. Ensure PIN input field uses polished styling. Maintain functional clarity while applying cohesive refined visual language across all form elements."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "frontend/src/index.css": "Global styles with dark energetic theme using OKLCH color tokens, custom fonts (Inter + Barlow Condensed), card hover animations, glow effects, and gradient utilities for the DealDrop brand.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom fonts (Inter/Barlow Condensed), deal-specific color tokens (deal-orange, deal-neon, deal-surface), glow shadows, and animation keyframes.",
+  "frontend/src/contexts/AdminAuthContext.tsx": "React context providing admin authentication state (PIN storage, login/logout) for protecting admin routes.",
+  "frontend/src/hooks/useQueries.ts": "All React Query hooks for backend operations: listings (CRUD, toggle), orders (place, fetch, update status), with proper cache invalidation.",
+  "frontend/src/components/CountdownTimer.tsx": "Live countdown timer component that converts nanosecond timestamps to HH:MM:SS display, updating every second, showing \"Ended\" when expired.",
+  "frontend/src/components/CategoryFilter.tsx": "Horizontal scrollable filter bar with category buttons (All, Deals, Loots, Offers, Flash Sales, Quick Sales, Resell) with active state highlighting.",
+  "frontend/src/components/ProductCard.tsx": "Responsive product card showing image, discount badge, category label, countdown timer for flash/quick sales, pricing, stock status, and CTA button with hover animations.",
+  "frontend/src/components/Layout.tsx": "Public page layout wrapper with sticky header (logo + nav), main content area, and footer with caffeine.ai attribution and dynamic year.",
+  "frontend/src/components/OrderForm.tsx": "Customer order form with name/phone/address/quantity fields, validation, backend submission via placeOrder mutation, and success confirmation display.",
+  "frontend/src/components/AddListingForm.tsx": "Admin form for creating new listings with all fields including conditional expiry date/time for flash/quick sale categories.",
+  "frontend/src/components/EditListingForm.tsx": "Admin form pre-populated with existing listing data for editing, with save and delete (with confirmation dialog) actions.",
+  "frontend/src/pages/HomePage.tsx": "Public homepage with hero section, stats, category filter, and product grid; uses correct `useActiveListings` hook and BigInt-safe expiry comparison.",
+  "frontend/src/pages/ListingDetailPage.tsx": "Listing detail page using correct `useListing` hook; shows image, pricing, countdown, description, and order form with refined aesthetic.",
+  "frontend/src/pages/AdminLoginPage.tsx": "Admin login page with PIN verification using the actor directly (getAllOrders call), refined dark aesthetic with teal gradient icon, polished input and button styling.",
+  "frontend/src/pages/AdminDashboardPage.tsx": "Admin dashboard hub with navigation cards to Listings and Orders; logout navigates to `/admin` (the correct route path); refined jewel-tone aesthetic.",
+  "frontend/src/pages/ListingsManagementPage.tsx": "Admin listings management page using correct `useAllListings` hook (no pin arg); removed invalid `onCancel` prop from EditListingForm.",
+  "frontend/src/pages/OrdersDashboardPage.tsx": "Admin orders dashboard using correct `useAllOrders` hook; table view with status summary cards and inline status dropdowns.",
+  "frontend/src/App.tsx": "Main app with TanStack Router setup, public layout route wrapping home/detail pages, admin routes without public layout, and AdminAuthProvider wrapping all routes."
+}

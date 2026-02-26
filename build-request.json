@@ -1,0 +1,46 @@
+{
+  "kind": "build_request",
+  "title": "Revamp visual aesthetic to a refined, stylish look",
+  "projectName": "DealDrop",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Revamp the entire frontend visual aesthetic to feel refined, stylish, and aesthetic while retaining the energetic deal-hunting vibe. Replace the current bold/loud color palette with a more curated, premium look — consider deep jewel tones, soft gradients, elegant typography, refined card layouts with subtle shadows and borders, and polished micro-interactions. Update CSS custom properties in frontend/src/index.css and Tailwind tokens in frontend/tailwind.config.js accordingly. Apply changes consistently across all pages and components: HomePage, ListingDetailPage, ProductCard, CategoryFilter, Layout, OrderForm, AdminLoginPage, AdminDashboardPage, ListingsManagementPage, OrdersDashboardPage, AddListingForm, EditListingForm, and CountdownTimer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change looks to aesthetic"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The site uses a cohesive, aesthetic color palette (e.g., deep jewel tones or muted luxe colors) replacing the previous loud neon/orange scheme.",
+        "Typography feels refined — clean font choices, well-spaced headings and body text, elegant price callouts.",
+        "Product cards have polished styling: subtle gradients or borders, smooth hover animations, and refined badge design.",
+        "The category filter bar, header, footer, and hero section all reflect the updated aesthetic consistently.",
+        "Admin panel pages (login, dashboard, listings, orders) share the same refined visual language.",
+        "Countdown timers and discount badges remain highly visible but are styled to match the new aesthetic.",
+        "All interactive elements (buttons, inputs, dropdowns) have consistent, polished styling with smooth transitions.",
+        "Dark background is retained but feels premium rather than harsh."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "Do not change any backend logic or data models.",
+    "Do not alter routing structure or page-level component hierarchy."
+  ],
+  "nonGoals": [
+    "Adding new features or pages.",
+    "Changing the backend schema or API.",
+    "Switching to a light-mode theme.",
+    "Modifying authentication flows."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
